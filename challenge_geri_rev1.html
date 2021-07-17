@@ -25,8 +25,10 @@
         function mybatu() {
             let judul = document.getElementById("ref1");
             let judul1=document.getElementById("ref"); 
+            judul.align="center";
             judul1.innerText="";
             judul.style.backgroundColor="#4C9654";
+            judul.style.color="white";
             let pool = [1,2,3];
             let rand =  Math.floor(Math.random() * pool.length);
             if (pil) 
@@ -38,25 +40,25 @@
               if (pool[rand]==1)
               { 
                 document.getElementById("batu1").src="images/batu1.png";
+                judul.style.backgroundColor="#035B0C";
                 judul.innerText=" DRAW";
-                
-           //     document.body.append(judul);
-              }  
+            }  
              else if  (pool[rand]==2)
              {
                 document.getElementById("jari1").src="images/jari1.png";
-                judul.innerText="COMP1";
-              //  document.body.append(judul);
+                judul.innerText="COM WIN";
+           
              }
               else if (pool[rand]==3)
               {
                 document.getElementById("kertas1").src="images/kertas1.png";
-                judul.innerText="PLAYER";
-            //    document.body.append(judul);
+                judul.innerText="PLAYER 1 WIN";
+            
               }
             }
-            }
-         function myjari() {
+            console.log(judul.innerText);
+        }
+        function myjari() {
             let judul = document.getElementById("ref1");
             let judul1=document.getElementById("ref"); 
             judul1.innerText="";
@@ -71,19 +73,21 @@
               if (pool[rand]==1)
               {
                 document.getElementById("batu1").src="images/batu1.png";
-                judul.innerText="COMP1";
+                judul.innerText="COM WIN";
               }  
               else if  (pool[rand]==2)
               {
                 document.getElementById("jari1").src="images/jari1.png";
+                judul.style.backgroundColor="#035B0C";
                 judul.innerText="DRAW";
               }
               else if (pool[rand]==3)
               {
                 document.getElementById("kertas1").src="images/kertas1.png"; 
-                judul.innerText="PLAYER1";
+                judul.innerText="PLAYER 1 WIN";
               }  
             }
+            console.log(judul.innerText);
          }
 
         function mykertas() {
@@ -102,19 +106,21 @@
              if (pool[rand]==1)
              {
                 document.getElementById("batu1").src="images/batu1.png";
-                judul.innerText="PLAYER1";
+                judul.innerText="PLAYER 1 WIN";
              }
              else if  (pool[rand]==2)
              {
                 document.getElementById("jari1").src="images/jari1.png"
-                judul.innerText="COMP1";;
+                judul.innerText="COM WIN";
              }
              else if (pool[rand]==3)
               {
                 document.getElementById("kertas1").src="images/kertas1.png";
+                judul.style.backgroundColor="#035B0C";
                 judul.innerText="DRAW";
               }
           }
+          console.log(judul.innerText);
         }
         function myrefre() {
               document.getElementById("batu").src="images/batu.png"; 
@@ -134,31 +140,60 @@
           judul.innerText="";
           judul1.innerText="VS";
            myrefre();
+           start();
            pil=true;
-        }
         
+        var rotate = false;
+        var runner;
+        var degrees = 0;
+
+        function start() {
+            runner = setInterval(function () {
+                if (degrees === 360) {
+                    degrees = 0
+                    clearInterval(runner);
+                }
+                degrees++;
+                btn.style.webkitTransform = 'rotate(' + degrees + 'deg)';
+            }, 1)
+        }
+
+        function stop() {
+            clearInterval(runner);
+        }
+        var btn = document.getElementById("refre");
+        btn.addEventListener('click', function () {
+            if (!rotate) {
+                rotate = true;
+                start();
+            } else {
+                rotate = false;
+                stop();
+            }
+        })
+        }  
     </script>
 
     <section>
-        
-        <div style="position: absolute; left: 40px;top:1.5%;">
+       <div style="position: absolute; left: 10px;top:1.5%;font-size:30px;"class="hero-text"> <</div> 
+        <div style="position: absolute; left: 60px;top:1.5%;"> 
             <img src="images/logo.png" width="50x" height="50x" >
         </div> 
 
-        <div style="position: absolute; left: 8%; top: 2.5%;font-size:18px;" class="hero-text">ROCK PAPER SCISSOR</div>
-        <div style="position: absolute; left: 36%; top: 10%;font-size:18px;" class="hero-text">PLAYER 1</div>
-        <div style="position: absolute; left: 63%; top: 10%;font-size:18px;" class="hero-text">COM 1</div>
+        <div style="position: absolute; left: 10%; top: 2.5%;font-size:18px;" class="hero-text">ROCK PAPER SCISSOR</div>
+        <div style="position: absolute; left: 35%; top: 10%;font-size:18px;" class="hero-text">PLAYER 1</div>
+        <div style="position: absolute; left: 69%; top: 10%;font-size:18px;" class="hero-text">COM </div>
         <div style="position: absolute; left: 50%; top: 45%;font-size:48px;color: brown;" id="ref">VS</div>
        <div class="container">
             
          
             <div class="row" style="padding-top:130px;padding-left:350px;left:46%;" >
                 <div class="col-4" >
-                    <img id="batu" src="images/batu.png" width="128px" height="92px"  onclick='mybatu()'> 
+                   <img id="batu" src="images/batu.png" width="128px" height="92px"  onclick='mybatu()'>
                 </div>
        
                 <div class="col-8" >
-                    <img id="batu1" src="images/batu.png" width="128px" height="92px"  style="position: absolute;right: 58%";> 
+                    <img id="batu1" src="images/batu.png" width="128px" height="92px"  style="position: absolute;right: 48%";> 
                 </div>
             </div>
             <div class="row" style="padding-top:40px;padding-left:370px;" >
@@ -167,7 +202,7 @@
                 </div>
        
                 <div class="col-8" >
-                    <img id="kertas1" src="images/kertas.png" width="115px" height="100px" style="position: absolute;right: 58%"> 
+                    <img id="kertas1" src="images/kertas.png" width="115px" height="100px" style="position: absolute;right: 48%"> 
                 </div>
             </div>
             <div class="row" style="padding-top:40px;padding-left:370px;" >
@@ -176,10 +211,10 @@
                 </div>
            
                   <div class="col-8" >
-                    <img id="jari1" src="images/jari.png" width="134px" height="100px" style="position: absolute;right: 58%"> 
+                    <img id="jari1" src="images/jari.png" width="134px" height="100px" style="position: absolute;right: 48%"> 
                 </div>
            </div>
-            <div class="row" style="padding-top:20px;padding-left:560px;" >
+            <div class="row" style="padding-top:20px;padding-left:565px;" >
                 <div class="col-12" >
                     <img id="refre" src="images/refresh.png" width="50px" height="50px" onclick='myrefresh()'> 
                 </div>

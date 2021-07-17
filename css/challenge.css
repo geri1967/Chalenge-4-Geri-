@@ -28,10 +28,13 @@ body{
 #ref1{
     left: 520px;
     right: 489.89px;
-    width: 180.11px;
-    height: 90.93px;
+    width: 210.11px;
+    height: 100.93px;
+    font-weight: bold;
     radius: 10px;
     Rotation: 28.87°;
+    transform: rotate(-28.87deg);
+    -webkit-animation: spin 4s linear;
     Fill: Solid;
     background-color: #9C835F;
  /* background-color:#4C9654;*/
