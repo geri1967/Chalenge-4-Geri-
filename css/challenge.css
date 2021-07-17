@@ -1,0 +1,39 @@
+body{
+    margin: 0px;
+   background-color: #9C835F;
+ 
+}
+
+.hero-text {
+    color:black;
+    weight: normal;
+    font-family: DelaGothicOne-Regular;
+}
+
+#hero-text1 {
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+#ref{
+    color:black;
+    weight: normal;
+    font-family: DelaGothicOne-Regular;
+}
+
+
+
+#ref1{
+    left: 520px;
+    right: 489.89px;
+    width: 180.11px;
+    height: 90.93px;
+    radius: 10px;
+    Rotation: 28.87°;
+    Fill: Solid;
+    background-color: #9C835F;
+ /* background-color:#4C9654;*/
+
+}

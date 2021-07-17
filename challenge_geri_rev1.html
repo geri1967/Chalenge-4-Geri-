@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+       
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/challenge.css">
+</head>
+
+<body>
+    <div  style="position: absolute; left: 47%; top: 45%;font-size:35px;" id="ref1";> </div>
+    <script type="text/javascript">
+        let pil=true;
+        
+        function mybatu() {
+            let judul = document.getElementById("ref1");
+            let judul1=document.getElementById("ref"); 
+            judul1.innerText="";
+            judul.style.backgroundColor="#4C9654";
+            let pool = [1,2,3];
+            let rand =  Math.floor(Math.random() * pool.length);
+            if (pil) 
+            {
+             myrefre();
+            
+              document.getElementById("batu").src="images/batu1.png"; 
+              pil=false;
+              if (pool[rand]==1)
+              { 
+                document.getElementById("batu1").src="images/batu1.png";
+                judul.innerText=" DRAW";
+                
+           //     document.body.append(judul);
+              }  
+             else if  (pool[rand]==2)
+             {
+                document.getElementById("jari1").src="images/jari1.png";
+                judul.innerText="COMP1";
+              //  document.body.append(judul);
+             }
+              else if (pool[rand]==3)
+              {
+                document.getElementById("kertas1").src="images/kertas1.png";
+                judul.innerText="PLAYER";
+            //    document.body.append(judul);
+              }
+            }
+            }
+         function myjari() {
+            let judul = document.getElementById("ref1");
+            let judul1=document.getElementById("ref"); 
+            judul1.innerText="";
+            judul.style.backgroundColor="#4C9654";
+            let pool = [1,2,3];
+	          let rand =  Math.floor(Math.random() * pool.length);
+            if (pil) 
+            {
+              myrefre();
+              document.getElementById("jari").src="images/jari1.png"; 
+              pil=false;
+              if (pool[rand]==1)
+              {
+                document.getElementById("batu1").src="images/batu1.png";
+                judul.innerText="COMP1";
+              }  
+              else if  (pool[rand]==2)
+              {
+                document.getElementById("jari1").src="images/jari1.png";
+                judul.innerText="DRAW";
+              }
+              else if (pool[rand]==3)
+              {
+                document.getElementById("kertas1").src="images/kertas1.png"; 
+                judul.innerText="PLAYER1";
+              }  
+            }
+         }
+
+        function mykertas() {
+            let judul = document.getElementById("ref1");
+            let judul1=document.getElementById("ref"); 
+            judul1.innerText="";
+            judul.style.backgroundColor="#4C9654";
+            let pool = [1,2,3];
+	          let rand =  Math.floor(Math.random() * pool.length);
+            if (pil) 
+            {
+              myrefre();
+           
+                document.getElementById("kertas").src="images/kertas1.png"; 
+                pil=false;
+             if (pool[rand]==1)
+             {
+                document.getElementById("batu1").src="images/batu1.png";
+                judul.innerText="PLAYER1";
+             }
+             else if  (pool[rand]==2)
+             {
+                document.getElementById("jari1").src="images/jari1.png"
+                judul.innerText="COMP1";;
+             }
+             else if (pool[rand]==3)
+              {
+                document.getElementById("kertas1").src="images/kertas1.png";
+                judul.innerText="DRAW";
+              }
+          }
+        }
+        function myrefre() {
+              document.getElementById("batu").src="images/batu.png"; 
+              document.getElementById("jari").src="images/jari.png"; 
+              document.getElementById("kertas").src="images/kertas.png"; 
+              document.getElementById("batu1").src="images/batu.png";
+              document.getElementById("jari1").src="images/jari.png";
+              document.getElementById("kertas1").src="images/kertas.png";
+        }
+        function myrefresh()
+        {
+          let judul = document.getElementById("ref1");
+          let judul1=document.getElementById("ref"); 
+         // judul.backgroundColor="#9C835F";
+          judul.style.backgroundColor="#9C835F";
+          judul1.backgroundColor="#9C835F";
+          judul.innerText="";
+          judul1.innerText="VS";
+           myrefre();
+           pil=true;
+        }
+        
+    </script>
+
+    <section>
+        
+        <div style="position: absolute; left: 40px;top:1.5%;">
+            <img src="images/logo.png" width="50x" height="50x" >
+        </div> 
+
+        <div style="position: absolute; left: 8%; top: 2.5%;font-size:18px;" class="hero-text">ROCK PAPER SCISSOR</div>
+        <div style="position: absolute; left: 36%; top: 10%;font-size:18px;" class="hero-text">PLAYER 1</div>
+        <div style="position: absolute; left: 63%; top: 10%;font-size:18px;" class="hero-text">COM 1</div>
+        <div style="position: absolute; left: 50%; top: 45%;font-size:48px;color: brown;" id="ref">VS</div>
+       <div class="container">
+            
+         
+            <div class="row" style="padding-top:130px;padding-left:350px;left:46%;" >
+                <div class="col-4" >
+                    <img id="batu" src="images/batu.png" width="128px" height="92px"  onclick='mybatu()'> 
+                </div>
+       
+                <div class="col-8" >
+                    <img id="batu1" src="images/batu.png" width="128px" height="92px"  style="position: absolute;right: 58%";> 
+                </div>
+            </div>
+            <div class="row" style="padding-top:40px;padding-left:370px;" >
+                <div class="col-4" >
+                    <img id="kertas" src="images/kertas.png" width="115px" height="100px" onclick='mykertas()'> 
+                </div>
+       
+                <div class="col-8" >
+                    <img id="kertas1" src="images/kertas.png" width="115px" height="100px" style="position: absolute;right: 58%"> 
+                </div>
+            </div>
+            <div class="row" style="padding-top:40px;padding-left:370px;" >
+                <div class="col-4" >
+                    <img id="jari" src="images/jari.png" width="134px" height="100px" onclick='myjari()'>
+                </div>
+           
+                  <div class="col-8" >
+                    <img id="jari1" src="images/jari.png" width="134px" height="100px" style="position: absolute;right: 58%"> 
+                </div>
+           </div>
+            <div class="row" style="padding-top:20px;padding-left:560px;" >
+                <div class="col-12" >
+                    <img id="refre" src="images/refresh.png" width="50px" height="50px" onclick='myrefresh()'> 
+                </div>
+            </div>
+       </div>
+    </section>
+   
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
